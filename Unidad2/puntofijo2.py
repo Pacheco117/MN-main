@@ -5,11 +5,11 @@ import matplotlib.pyplot as plt
 
 # Definir la función g(x) para el método de punto fijo
 def g(x):
-    return 3 - 1/x
+    return np.log(4 * x)
 
 # Criterio de convergencia
 def g_prime(x):
-    return -(1/3) * (1 - x)**(-2/3)
+    return 1 / x 
 
 # Error absoluto
 def error_absoluto(x_new, x_old):
@@ -50,7 +50,7 @@ def punto_fijo(x0, tol=1e-5, max_iter=100):
     return iteraciones, errores_abs, errores_rel, errores_cuad
 
 # Parámetros iniciales
-x0 = 0.5
+x0 = 1.0
 iteraciones, errores_abs, errores_rel, errores_cuad = punto_fijo(x0)
 
 # Imprimir tabla de iteraciones
